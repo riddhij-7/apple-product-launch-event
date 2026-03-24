@@ -71,3 +71,13 @@ img {
   display: block;
   max-width: 100%;
 }
+
+@keyframes smoothCycle {
+            0%   { color: #fff; }
+            20%  { color: #f4a7b9; }
+            40%  { color: #f5e642; }
+            60%  { color: #7aa7d2; }
+            80%  { color: #c8c8c8; }
+            100% { color: #fff; }
+        }
+        .neo-smooth { animation: smoothCycle 8s infinite; }

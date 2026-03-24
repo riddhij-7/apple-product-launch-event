@@ -47,9 +47,7 @@ export default function Navbar() {
           width={30}
           height={30}
         />
-        < span className="text-white font-semibold text-sm tracking-wide">
-        Apple MacBook Neo
-        </span>
+    
         </Link>
         
         {/* Desktop links */}
