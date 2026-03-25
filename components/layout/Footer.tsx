@@ -46,7 +46,7 @@ export default function Footer() {
             MacBook Neo
             </p>
             </Link>
-            <p className="text-white/40 text-xs">
+            <p className="text-white/40 py-3 text-xs">
               The most powerful MacBook ever made.
             </p>
           </div>

@@ -100,6 +100,7 @@ export default function HeroSection() {
         </video>
         </div>
         */}
+        
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-5xl mx-auto">
