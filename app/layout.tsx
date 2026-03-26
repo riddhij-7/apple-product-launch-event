@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Apple Mackbook Neo Launch Event',
-    template: '%s | Apple Mackbook Neo Launch',
+    default: 'Apple MacBook Neo Launch Event',
+    template: '%s | Apple MacBook Neo Launch',
   },
   description:
     'Join us for the launch of MacBook Neo. The most powerful MacBook ever made.',

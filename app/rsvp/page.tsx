@@ -12,8 +12,8 @@ export default function RSVPPage() {
 
         {/* Page header */}
         <div className="text-center mb-16">
-          <h1 className="text-white font-semibold leading-tight mb-4"
-            style={{ fontSize: 'clamp(36px, 6vw, 64px)' }}
+          <h1 className="text-white font-small leading-tight mb-4"
+            style={{ fontSize: 'clamp(32px, 6vw, 52px)' }}
           >
             RSVP for the Apple MacBook Neo Launch Event
           </h1>

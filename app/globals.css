@@ -80,4 +80,17 @@ img {
             80%  { color: #c8c8c8; }
             100% { color: #fff; }
         }
-        .neo-smooth { animation: smoothCycle 8s infinite; }
+.neo-smooth { animation: smoothCycle 8s infinite; }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}

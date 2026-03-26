@@ -33,7 +33,7 @@ export default function EventHighlights() {
           Apple Event
         </p>
 
-        {/* One bold statement */}
+        
         <h2 className="text-white text-center font-semibold leading-tight mb-20"
           style={{ fontSize: 'clamp(32px, 5vw, 56px)' }}
         >
@@ -63,12 +63,15 @@ export default function EventHighlights() {
 
         {/* CTA */}
         <div className="flex justify-center mt-12">
-          <Link
-            href="/agenda"
-            className="text-white/90 hover:text-white text-sm transition-colors duration-200 flex items-center gap-2"
-          >
-            View full agenda
-            <span className="text-lg">→</span>
+          <Link href="/agenda">
+            <div className="mt-10 flex justify-center group cursor-pointer">
+              <span className="text-white text-lg font-medium flex items-center gap-2 transition-all duration-300 group-hover:gap-4">
+                View Full Agenda
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+            </div>
           </Link>
         </div>
 
