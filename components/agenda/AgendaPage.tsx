@@ -106,8 +106,8 @@ function SessionCard({ session, index, expanded, onToggle }: { session: Session;
         className="flex-1 mb-4 rounded-2xl cursor-pointer overflow-hidden"
         style={{
           background: session.highlight
-            ? "#1e1e1e"
-            : "#161616",
+            ? "#0000009a"
+            : "#000000d3",
           border: "1px solid " + (session.highlight ? resolvedColor + "44" : "rgba(255,255,255,0.07)"),
           transform: expanded ? "scale(1.01) translateX(3px)" : "scale(1) translateX(0)",
           boxShadow: expanded ? "0 12px 40px " + cfg.glow : "none",
@@ -116,14 +116,14 @@ function SessionCard({ session, index, expanded, onToggle }: { session: Session;
         onMouseEnter={(e) => {
           if (!expanded) {
             e.currentTarget.style.borderColor = resolvedColor + "55"
-            e.currentTarget.style.background = "#1e1e1e"
+            e.currentTarget.style.background = "rgba(255,255,255,0.05)"
             e.currentTarget.style.transform = "scale(1.01) translateX(2px)"
           }
         }}
         onMouseLeave={(e) => {
           if (!expanded) {
             e.currentTarget.style.borderColor = session.highlight ? resolvedColor + "44" : "rgba(255,255,255,0.07)"
-            e.currentTarget.style.background = session.highlight ? "#1e1e1e" : "#161616"
+            e.currentTarget.style.background = session.highlight ? "rgba(0,0,0,0.6)" : "#000000d3"
             e.currentTarget.style.transform = "scale(1) translateX(0)"
           }
         }}
@@ -237,8 +237,8 @@ export default function AgendaPage() {
 
         {/* ── Hero ── */}
         <section className="text-center pb-10">
-          <p
-            className="text-xs tracking-[0.25em] uppercase font-semibold mb-4"
+          {/*<p
+            className="text-xs tracking-[0.25em] uppercase font-semibold mb-10"
             style={{
               color: "#6e6e73",
               opacity: mounted ? 1 : 0,
@@ -247,11 +247,11 @@ export default function AgendaPage() {
             }}
           >
             April 7, 2026 · Apple Park · Cupertino, CA
-          </p>
+          </p> */}
           <h1
-            className="font-bold tracking-tight leading-none"
+            className="font-small tracking-tight leading-none mt-14"
             style={{
-              fontSize: "clamp(48px, 9vw, 92px)",
+              fontSize: "clamp(42px, 9vw, 82px)",
               color: "#ffffff",
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(20px)",

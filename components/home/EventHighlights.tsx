@@ -8,7 +8,7 @@ const highlights = [
   },
   {
     label: 'Time',
-    value: '6:00 PM',
+    value: '5:00 PM',
     sub: 'IST',
   },
   {
