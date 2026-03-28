@@ -28,11 +28,19 @@ const sessions: Session[] = [
 ]
 
 const typeConfig = {
-  keynote:    { label: "Keynote",    color: "#0071e3", glow: "rgba(0,113,227,0.3)" },
-  product:    { label: "Product",    color: "#30d158", glow: "rgba(48,209,88,0.3)" },
-  demo:       { label: "Live Demo",  color: "#ff9f0a", glow: "rgba(255,159,10,0.3)" },
-  break:      { label: "Break",      color: "#636366", glow: "rgba(99,99,102,0.2)" },
-  networking: { label: "Networking", color: "#bf5af2", glow: "rgba(191,90,242,0.3)" },
+  keynote:    { label: "Keynote",    color: "#f4a7b9", glow: "rgba(244,167,185,0.2)" },
+  product:    { label: "Product",    color: "#f5e642", glow: "rgba(245,230,66,0.2)"  },
+  demo:       { label: "Live Demo",  color: "#7aa7d2", glow: "rgba(122,167,210,0.2)" },
+  break:      { label: "Break",      color: "#c8c8c8", glow: "rgba(200,200,200,0.15)"},
+  networking: { label: "Networking", color: "#ffffff", glow: "rgba(255,255,255,0.12)"},
+}
+
+const typeColorResolved = {
+  keynote:    "#f4a7b9",
+  product:    "#f5e642",
+  demo:       "#7aa7d2",
+  break:      "#c8c8c8",
+  networking: "#ffffff",
 }
 
 const filters = ["all", "keynote", "product", "demo", "networking"]
@@ -51,6 +59,7 @@ function useInView() {
 function SessionCard({ session, index, expanded, onToggle }: { session: Session; index: number; expanded: boolean; onToggle: () => void }) {
   const { ref, inView } = useInView()
   const cfg = typeConfig[session.type]
+  const resolvedColor = typeColorResolved[session.type]
 
   return (
     <div
@@ -60,91 +69,118 @@ function SessionCard({ session, index, expanded, onToggle }: { session: Session;
         transform: inView ? "translateX(0px)" : "translateX(-28px)",
         transition: `opacity 0.45s ease ${index * 0.07}s, transform 0.6s cubic-bezier(0.34,1.5,0.64,1) ${index * 0.07}s`,
       }}
-      className="relative flex gap-4 md:gap-6 group"
+      className="relative flex gap-5 md:gap-7 group"
     >
-      {/* Left column: time + icon + line */}
-      <div className="flex flex-col items-center w-20 flex-shrink-0 pt-1">
+      {/* Left column: time + dot + line */}
+      <div className="flex flex-col items-center w-24 flex-shrink-0 pt-1">
         <div className="text-right w-full mb-2">
-          <span className="text-xs font-semibold block" style={{ color: "#f5f5f7" }}>{session.time}</span>
-          <span className="text-[10px]" style={{ color: "#6e6e73" }}>{session.duration}</span>
+          <span className="text-xs font-semibold block" style={{ color: "#ffffff" }}>
+            {session.time}
+          </span>
+          <span className="text-[10px]" style={{ color: "#6e6e73" }}>
+            {session.duration}
+          </span>
         </div>
         <div
           className="rounded-full flex-shrink-0"
           style={{
             width: session.highlight ? 8 : 6,
             height: session.highlight ? 8 : 6,
-            background: session.highlight ? cfg.color : "transparent",
-            border: "1.5px solid " + cfg.color,
+            background: session.highlight ? resolvedColor : "transparent",
+            border: "1.5px solid " + resolvedColor,
             boxShadow: session.highlight ? "0 0 8px " + cfg.glow : "none",
             transform: inView ? "scale(1)" : "scale(0.5)",
-            transition: "transform 0.5s cubic-bezier(0.25,0.1,0.25,1) " + (index * 0.08 + 0.2) + "s, box-shadow 0.3s ease",
+            transition: "transform 0.5s cubic-bezier(0.25,0.1,0.25,1) " + (index * 0.08 + 0.2) + "s",
             marginTop: 2,
           }}
         />
         <div
           className="w-px mt-2 flex-1 min-h-6"
-          style={{ background: "linear-gradient(to bottom, " + cfg.color + "50, transparent)" }}
+          style={{ background: `linear-gradient(to bottom, ${resolvedColor}40, transparent)` }}
         />
       </div>
 
       {/* Card */}
       <div
         onClick={onToggle}
-        className="flex-1 mb-5 rounded-2xl cursor-pointer overflow-hidden"
+        className="flex-1 mb-4 rounded-2xl cursor-pointer overflow-hidden"
         style={{
           background: session.highlight
-            ? "linear-gradient(135deg, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.02) 100%)"
-            : "rgba(255,255,255,0.03)",
-          border: "1px solid " + (session.highlight ? cfg.color + "44" : "rgba(255,255,255,0.07)"),
+            ? "#1e1e1e"
+            : "#161616",
+          border: "1px solid " + (session.highlight ? resolvedColor + "44" : "rgba(255,255,255,0.07)"),
           transform: expanded ? "scale(1.01) translateX(3px)" : "scale(1) translateX(0)",
           boxShadow: expanded ? "0 12px 40px " + cfg.glow : "none",
           transition: "all 0.45s cubic-bezier(0.34,1.4,0.64,1)",
         }}
         onMouseEnter={(e) => {
           if (!expanded) {
-            e.currentTarget.style.borderColor = cfg.color + "66"
+            e.currentTarget.style.borderColor = resolvedColor + "55"
+            e.currentTarget.style.background = "#1e1e1e"
             e.currentTarget.style.transform = "scale(1.01) translateX(2px)"
           }
         }}
         onMouseLeave={(e) => {
           if (!expanded) {
-            e.currentTarget.style.borderColor = session.highlight ? cfg.color + "44" : "rgba(255,255,255,0.07)"
+            e.currentTarget.style.borderColor = session.highlight ? resolvedColor + "44" : "rgba(255,255,255,0.07)"
+            e.currentTarget.style.background = session.highlight ? "#1e1e1e" : "#161616"
             e.currentTarget.style.transform = "scale(1) translateX(0)"
           }
         }}
       >
+        {/* Highlight top glow line */}
         {session.highlight && (
-          <div className="h-px w-full" style={{ background: "linear-gradient(90deg, transparent, " + cfg.color + ", transparent)" }} />
+          <div
+            className="h-px w-full"
+            style={{ background: `linear-gradient(90deg, transparent, ${resolvedColor}, transparent)` }}
+          />
         )}
 
         <div className="p-5">
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1 min-w-0">
+
+              {/* Type badge */}
               <span
                 className="inline-block text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded-full mb-2"
-                style={{ background: cfg.color + "1a", color: cfg.color, border: "1px solid " + cfg.color + "33" }}
+                style={{
+                  background: resolvedColor + "18",
+                  color: resolvedColor,
+                  border: "1px solid " + resolvedColor + "30",
+                }}
               >
                 {cfg.label}
               </span>
+
+              {/* Title */}
               <h3
                 className="font-semibold leading-snug mb-1"
-                style={{ fontSize: "clamp(14px, 2vw, 17px)", color: session.highlight ? "#f5f5f7" : "#d1d1d6" }}
+                style={{
+                  fontSize: "clamp(14px, 2vw, 16px)",
+                  color: session.highlight ? "#ffffff" : "#a1a1a6",
+                }}
               >
                 {session.title}
               </h3>
+
+              {/* Speaker / role */}
               {session.speaker ? (
                 <p className="text-xs" style={{ color: "#6e6e73" }}>
                   {session.speaker}
-                  {session.role && <span style={{ color: "#48484a" }}> · {session.role}</span>}
+                  {session.role && (
+                    <span style={{ color: "rgba(255,255,255,0.15)" }}> · {session.role}</span>
+                  )}
                 </p>
               ) : session.role ? (
                 <p className="text-xs" style={{ color: "#6e6e73" }}>{session.role}</p>
               ) : null}
             </div>
+
+            {/* Chevron */}
             <div
               style={{
-                color: "#636366",
-                transition: "transform 0.5s cubic-bezier(0.25,0.1,0.25,1)",
+                color: "#6e6e73",
+                transition: "transform 0.4s cubic-bezier(0.25,0.1,0.25,1)",
                 transform: expanded ? "rotate(180deg)" : "rotate(0deg)",
                 flexShrink: 0,
                 marginTop: 4,
@@ -156,17 +192,21 @@ function SessionCard({ session, index, expanded, onToggle }: { session: Session;
             </div>
           </div>
 
+          {/* Expanded description */}
           <div
             style={{
               maxHeight: expanded ? "300px" : "0",
               opacity: expanded ? 1 : 0,
               overflow: "hidden",
-              transition: "max-height 0.5s cubic-bezier(0.25,0.1,0.25,1), opacity 0.4s ease",
+              transition: "max-height 0.5s cubic-bezier(0.25,0.1,0.25,1), opacity 0.35s ease",
             }}
           >
             <p
               className="text-sm leading-relaxed mt-4 pt-4"
-              style={{ color: "#8e8e93", borderTop: "1px solid rgba(255,255,255,0.07)" }}
+              style={{
+                color: "#a1a1a6",
+                borderTop: "1px solid rgba(255,255,255,0.07)",
+              }}
             >
               {session.description}
             </p>
@@ -189,167 +229,117 @@ export default function AgendaPage() {
   const filtered = displayFilter === "all" ? sessions : sessions.filter((s) => s.type === displayFilter)
 
   return (
-    <main className="min-h-screen bg-black text-white overflow-x-hidden">
+    <main
+      className="min-h-screen overflow-x-hidden"
+      style={{ background: "#000000", color: "#ffffff", padding: "40px 24px 60px" }}
+    >
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
 
-      {/* Navbar */}
-      <nav
-        className="flex items-center justify-between px-8 py-4 sticky top-0 z-50"
-        style={{
-          background: "rgba(0,0,0,0.85)",
-          backdropFilter: "blur(20px)",
-          WebkitBackdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
-          opacity: mounted ? 1 : 0,
-          transition: "opacity 0.6s ease",
-        }}
-      >
-        {/* Apple logo */}
-        <svg width="18" height="22" viewBox="0 0 814 1000" fill="white">
-          <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 376.7 0 248.4 0 126.4c0-70 25-140.9 71.9-189.1C121.6 86 175.3 60 232.8 60c72.1 0 118.7 43.8 166.7 43.8 46.5 0 101.1-46.5 174.5-46.5 27.9 0 109.4 2.6 168.5 80.1zm-225.1-151.7c33.1-39.5 55.8-94.5 55.8-149.5 0-7.7-.6-15.4-1.9-22.4-52.6 1.9-114.9 35-152.8 79.4-31.4 36.7-58 91.7-58 147.4 0 8.3 1.3 16.6 1.9 19.2 3.2.6 8.4 1.3 13.6 1.3 47.4 0 106.5-31.4 141.4-75.4z"/>
-        </svg>
+        {/* ── Hero ── */}
+        <section className="text-center pb-10">
+          <p
+            className="text-xs tracking-[0.25em] uppercase font-semibold mb-4"
+            style={{
+              color: "#6e6e73",
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(12px)",
+              transition: "all 0.6s ease 0.1s",
+            }}
+          >
+            April 7, 2026 · Apple Park · Cupertino, CA
+          </p>
+          <h1
+            className="font-bold tracking-tight leading-none"
+            style={{
+              fontSize: "clamp(48px, 9vw, 92px)",
+              color: "#ffffff",
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.7s ease 0.2s, transform 0.7s cubic-bezier(0.25,0.1,0.25,1) 0.2s",
+            }}
+          >
+            Event Agenda
+          </h1>
+        </section>
 
-        {/* Nav links */}
-        <div className="flex items-center gap-8">
-          {["Home", "MacBook Neo", "Agenda", "Speakers", "Influencers", "Products"].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-sm"
-              style={{
-                color: item === "Agenda" ? "#f5f5f7" : "#6e6e73",
-                fontWeight: item === "Agenda" ? 600 : 400,
-                transition: "color 0.2s ease",
-                textDecoration: "none",
-              }}
-              onMouseEnter={(e) => { if (item !== "Agenda") (e.currentTarget as HTMLElement).style.color = "#d1d1d6" }}
-              onMouseLeave={(e) => { if (item !== "Agenda") (e.currentTarget as HTMLElement).style.color = "#6e6e73" }}
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-
-        {/* RSVP button */}
-        <a
-          href="/rsvp"
-          className="px-5 py-2 rounded-full text-sm font-semibold"
-          style={{
-            background: "#0071e3",
-            color: "#fff",
-            textDecoration: "none",
-            transition: "all 0.25s ease",
-          }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "#0077ed"
-            ;(e.currentTarget as HTMLElement).style.boxShadow = "0 4px 20px rgba(0,113,227,0.5)"
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.background = "#0071e3"
-            ;(e.currentTarget as HTMLElement).style.boxShadow = "none"
-          }}
-        >
-          RSVP Now
-        </a>
-      </nav>
-
-      {/* Hero */}
-      <section className="px-8 pt-16 pb-12 text-center">
-        <p
-          className="text-xs tracking-[0.25em] uppercase font-semibold mb-5"
-          style={{
-            color: "#0071e3",
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(12px)",
-            transition: "all 0.6s ease 0.1s",
-          }}
-        >
-          April 7, 2026 · Apple Park · Cupertino, CA
-        </p>
-
-        <h1
-          className="font-bold tracking-tight leading-none"
-          style={{
-            fontSize: "clamp(52px, 10vw, 96px)",
-            color: "#f5f5f7",
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease 0.2s, transform 0.7s cubic-bezier(0.25,0.1,0.25,1) 0.2s",
-          }}
-        >
-          Event Agenda
-        </h1>
-      </section>
-
-      {/* Filter pills */}
-      <div
-        className="flex justify-center gap-2 flex-wrap px-6 mb-5"
-        style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease 0.65s" }}
-      >
-        {filters.map((f) => {
-          const isActive = activeFilter === f
-          const color = f === "all" ? "#ffffff" : typeConfig[f as keyof typeof typeConfig]?.color
-          const glow = f === "all" ? "rgba(255,255,255,0.15)" : typeConfig[f as keyof typeof typeConfig]?.glow
-          return (
-            <button
-              key={f}
-              onClick={() => {
-                if (f === activeFilter) return
-                setListVisible(false)
-                setTimeout(() => {
-                  setActiveFilter(f)
-                  setDisplayFilter(f)
-                  setExpanded(null)
-                  setListVisible(true)
-                }, 260)
-              }}
-              className="px-5 py-2 rounded-full text-xs font-bold capitalize"
-              style={{
-                background: isActive ? color : "rgba(255,255,255,0.05)",
-                color: isActive ? "#000" : "#a1a1a6",
-                border: "1px solid " + (isActive ? color : "rgba(255,255,255,0.1)"),
-                transform: isActive ? "scale(1.04)" : "scale(1)",
-                boxShadow: isActive ? "0 4px 20px " + glow : "none",
-                transition: "all 0.35s cubic-bezier(0.25,0.1,0.25,1)",
-              }}
-            >
-              {f === "all" ? "All sessions" : typeConfig[f as keyof typeof typeConfig]?.label}
-            </button>
-          )
-        })}
-      </div>
-
-      {/* Legend */}
-      <div className="flex justify-center gap-5 flex-wrap px-6 mb-16">
-        {Object.entries(typeConfig).map(([key, val]) => (
-          <div key={key} className="flex items-center gap-1.5">
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: val.color }} />
-            <span className="text-[11px]" style={{ color: "#6e6e73" }}>{val.label}</span>
-          </div>
-        ))}
-      </div>
-
-      {/* Sessions */}
-      <section className="max-w-2xl mx-auto px-6 pb-24">
+        {/* ── Filter pills ── */}
         <div
-          style={{
-            opacity: listVisible ? 1 : 0,
-            transform: listVisible ? "translateX(0px)" : "translateX(32px)",
-            transition: "opacity 0.26s ease, transform 0.55s cubic-bezier(0.34,1.5,0.64,1)",
-          }}
-          className="flex flex-col"
+          className="flex justify-center gap-2 flex-wrap mb-4"
+          style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease 0.4s" }}
         >
-          {filtered.map((session, i) => (
-            <SessionCard
-              key={session.time + session.title}
-              session={session}
-              index={i}
-              expanded={expanded === i}
-              onToggle={() => setExpanded(expanded === i ? null : i)}
-            />
+          {filters.map((f) => {
+            const isActive = activeFilter === f
+            const resolvedColor = f === "all" ? "#ffffff" : typeColorResolved[f as keyof typeof typeColorResolved]
+            const glow = f === "all" ? "rgba(255,255,255,0.12)" : typeConfig[f as keyof typeof typeConfig]?.glow
+            return (
+              <button
+                key={f}
+                onClick={() => {
+                  if (f === activeFilter) return
+                  setListVisible(false)
+                  setTimeout(() => {
+                    setActiveFilter(f)
+                    setDisplayFilter(f)
+                    setExpanded(null)
+                    setListVisible(true)
+                  }, 260)
+                }}
+                className="px-5 py-2 rounded-full text-xs font-bold capitalize"
+                style={{
+                  background: isActive ? resolvedColor : "#1a1a1a",
+                  color: isActive ? "#000" : "#a1a1a6",
+                  border: "1px solid " + (isActive ? resolvedColor : "rgba(255,255,255,0.07)"),
+                  transform: isActive ? "scale(1.04)" : "scale(1)",
+                  boxShadow: isActive ? "0 4px 18px " + glow : "none",
+                  transition: "all 0.35s cubic-bezier(0.25,0.1,0.25,1)",
+                  cursor: "pointer",
+                }}
+              >
+                {f === "all" ? "All sessions" : typeConfig[f as keyof typeof typeConfig]?.label}
+              </button>
+            )
+          })}
+        </div>
+
+        {/* ── Legend ── */}
+        <div
+          className="flex justify-center gap-5 flex-wrap mb-12"
+          style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease 0.5s" }}
+        >
+          {Object.entries(typeConfig).map(([key, val]) => (
+            <div key={key} className="flex items-center gap-1.5">
+              <div
+                className="rounded-full"
+                style={{ width: 6, height: 6, background: typeColorResolved[key as keyof typeof typeColorResolved] }}
+              />
+              <span className="text-[11px]" style={{ color: "#6e6e73" }}>{val.label}</span>
+            </div>
           ))}
         </div>
 
-      </section>
+        {/* ── Sessions list ── */}
+        <section>
+          <div
+            style={{
+              opacity: listVisible ? 1 : 0,
+              transform: listVisible ? "translateX(0px)" : "translateX(32px)",
+              transition: "opacity 0.26s ease, transform 0.55s cubic-bezier(0.34,1.5,0.64,1)",
+            }}
+            className="flex flex-col"
+          >
+            {filtered.map((session, i) => (
+              <SessionCard
+                key={session.time + session.title}
+                session={session}
+                index={i}
+                expanded={expanded === i}
+                onToggle={() => setExpanded(expanded === i ? null : i)}
+              />
+            ))}
+          </div>
+        </section>
+
+      </div>
     </main>
   )
 }
