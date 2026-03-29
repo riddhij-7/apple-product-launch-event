@@ -71,7 +71,7 @@ export default function ProductsPage() {
     
     {/* Your product image */}
     <Image
-      src="/images/Iphone 17 pro.jpg" 
+      src="/images/Iphone-17-pro.jpg" 
       alt="iPhone 17 Pro"
       fill
       className="object-cover object-center opacity-90"
