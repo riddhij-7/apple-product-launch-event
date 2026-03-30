@@ -35,7 +35,7 @@ function useCountdown(targetDate: Date) {
   return timeLeft
 }
 
-const EVENT_DATE = new Date('2026-04-07T18:00:00')
+const EVENT_DATE = new Date('2026-04-07T17:00:00')
 
 export default function HeroSection() {
   const [mounted, setMounted] = useState(false)

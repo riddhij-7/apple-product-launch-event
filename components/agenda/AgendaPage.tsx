@@ -249,7 +249,7 @@ export default function AgendaPage() {
             April 7, 2026 · Apple Park · Cupertino, CA
           </p> */}
           <h1
-            className="font-small tracking-tight leading-none mt-14"
+            className="font-bold tracking-tight leading-none mt-14"
             style={{
               fontSize: "clamp(42px, 9vw, 82px)",
               color: "#ffffff",
