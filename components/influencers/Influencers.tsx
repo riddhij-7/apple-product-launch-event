@@ -35,6 +35,11 @@ const GALLERY = [
   { label: "Watch Series 9",   span: 1, accent: "#c8c8c8", src: "/images/WWDC.jpg" },
   { label: "Apple Park Tour",  span: 1, accent: "#f4a7b9", src: "/images/store.jpg" },
   { label: "MacBook Air Launch", span: 1, accent: "#7aa7d2", src: "/images/ios26.jpg" },
+  { label: "Developers outside of Caffè Macs cheer as Apple Vision Pro is unveiled", span: 2, accent: "#f5e642", src: "/images/influencers1.jpg" },
+  { label: "Press attendees take a look at Apple Vision Pro", span: 1, accent: "#c8c8c8", src: "/images/influencers2.jpg" },
+  { label: "The winners of the Apple Design Awards share a moment onstage at the ceremony.", span: 1, accent: "#7aa7d2", src: "/images/influencers3.jpg" },
+  { label: "Craig Federighi poses for a selfie with influencers.", span: 1, accent: "#f4a7b9", src: "/images/influencers4.jpg" },
+  { label: "An attendee poses at the launch of WWDC24.", span: 1, accent: "#c8c8c8", src: "/images/influencers5.jpg" },
 ];
 
 const colors = [NEO.yellow, NEO.pink, NEO.blue, NEO.gray];

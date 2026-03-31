@@ -63,7 +63,7 @@ export default function HeroSection() {
 
         {/* Background image */}
 
-        <div className="absolute inset-x-0 bottom-0 top-[52px] z-0">
+        {/*<div className="absolute inset-x-0 bottom-0 top-[52px] z-0">
           <Image
             src="/images/display.jpg"
             alt="MacBook Neo"
@@ -76,9 +76,9 @@ export default function HeroSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-black/50" />
-        </div>
+        </div> */}
 
-         {/* Background video  
+         {/* Background video  */}
         <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
         <video
             autoPlay
@@ -99,7 +99,7 @@ export default function HeroSection() {
             <source src="/videos/apple-hero.webm" type="video/webm" />
         </video>
         </div>
-        */}
+        
         
 
         {/* Content */}

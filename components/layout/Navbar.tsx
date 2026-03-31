@@ -8,7 +8,6 @@ import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home',        href: '/' },
-  { label: 'MacBook Neo', href: '/macbook-neo' },
   { label: 'Agenda',      href: '/agenda' },
   { label: 'Speakers',    href: '/speakers' },
   { label: 'Influencers', href: '/influencers' },

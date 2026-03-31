@@ -218,3 +218,13 @@ option { background: #1a1a1a; color: #fff; }
 .fu2 { animation: fu 0.7s ease both 0.18s; }
 .fu3 { animation: fu 0.7s ease both 0.30s; }
 .fu4 { animation: fu 0.7s ease both 0.44s; }
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

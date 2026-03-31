@@ -10,7 +10,6 @@ const footerLinks = {
     { label: 'RSVP',        href: '/rsvp' },
   ],
   Products: [
-    { label: 'MacBook Neo', href: '/macbook-neo' },
     { label: 'All Products', href: '/products' },
   ],
   Community: [
