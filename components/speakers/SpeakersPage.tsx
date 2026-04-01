@@ -20,10 +20,10 @@ const speakers = [
     image: "/images/john.jpg",
   },
   {
-    name: "Steve Jobs",
-    role: "Founder, Apple",
-    image: "/images/stevejobs.jpg",
-  },
+    name: "Greg Joswiak",
+    role: "SVP Worldwide Marketing",
+    image: "/images/greg.webp",
+  }
 ];
 
 
