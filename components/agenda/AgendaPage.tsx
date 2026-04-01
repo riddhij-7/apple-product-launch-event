@@ -342,16 +342,14 @@ export default function AgendaPage() {
       </div>
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
   
-        {/* Background image / video */}
         <img
           src="/images/apple-park.jpg"
           className="absolute inset-0 w-full h-full mt-12 object-cover opacity-70"
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/10" />
 
-        {/* Text */}
+
         <div className="relative text-center">
           <h2 className="text-5xl md:text-7xl font-semibold">
             Take a look at the venue.
