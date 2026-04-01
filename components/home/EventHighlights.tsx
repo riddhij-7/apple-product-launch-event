@@ -1,4 +1,6 @@
+
 import Link from 'next/link'
+
 
 const highlights = [
   {
@@ -77,5 +79,6 @@ export default function EventHighlights() {
 
       </div>
     </section>
+    
   )
 }

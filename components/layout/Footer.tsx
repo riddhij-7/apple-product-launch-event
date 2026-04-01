@@ -14,7 +14,7 @@ const footerLinks = {
   ],
   Community: [
     { label: 'Influencers', href: '/influencers' },
-    { label: 'Past Events', href: '/products#past-events' },
+    { label: 'Past Events', href: '/speakers#past-events' },
   ],
 }
 

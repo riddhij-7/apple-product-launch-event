@@ -135,8 +135,18 @@ export default function SpeakersPage() {
             Join Tim Cook as he unveils the future of MacBook Neo and Apple's next generation of innovation.
           </p>
           <div className="mt-8 group cursor-pointer inline-flex items-center gap-2 text-white text-lg">
-            Watch Keynote
-            <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            <a href="https://www.youtube.com/watch?v=D80RTRjP1tQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-blue-400 text-sm hover:text-blue-300 transition-colors duration-200 group/link"
+            >
+              <span className="inline-flex items-center justify-center w-5 h-5 rounded-full border border-blue-400 group-hover/link:border-blue-300">
+                <svg className="w-2.5 h-2.5 ml-0.5" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M5 3.5v9l7-4.5z"/>
+                </svg>
+              </span>
+              Watch Keynote
+            </a>
           </div>
         </div>
       </section>

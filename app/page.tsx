@@ -1,6 +1,7 @@
 import HeroSection from '@/components/home/HeroSection'
 import EventHighlights from '@/components/home/EventHighlights'
 import SpeakersPreview from '@/components/home/SpeakersPreview'
+import LiveStream from '@/components/home/livestream'
 
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       <HeroSection />
       <EventHighlights />
       <SpeakersPreview />
+      <LiveStream />
     
     </>
   )

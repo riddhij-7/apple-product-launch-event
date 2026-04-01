@@ -87,7 +87,7 @@ export default function RSVPForm() {
           <p className="text-white/70 text-center mb-8">All tickets are free. Select the one that fits you.</p>
           <TicketTiers selected={ticketType} onSelect={setTicketType} />
           <button onClick={() => setStep(2)}
-            className="mt-8 w-full px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95">
+            className="mt-8 px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95">
             Continue →
           </button>
         </div>
@@ -150,7 +150,7 @@ export default function RSVPForm() {
               ← Back
             </button>
             <button type="submit" disabled={submitting}
-              className="flex-1 px-8 py-3.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95">
+              className=" px-8 py-3.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold text-sm rounded-full transition-all duration-200 hover:scale-[1.02] active:scale-95">
               {submitting ? 'Registering...' : 'Complete registration'}
             </button>
           </div>
