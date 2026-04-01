@@ -81,24 +81,16 @@ export default function HeroSection() {
          {/* Background video  */}
         <div className="absolute inset-0 z-0 overflow-hidden flex items-center justify-center">
         <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-            style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
-            transform: 'scale(0.6)',       
-            transformOrigin: 'center center',
-            width: '86%',    
-
-            }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-[60%] max-w-[900px] h-auto object-contain opacity-60"
         >
-            <source src="/videos/apple-hero.mp4" type="video/mp4" />
-            <source src="/videos/apple-hero.webm" type="video/webm" />
+          <source src="/videos/apple-hero.mp4" type="video/mp4" />
+          <source src="/videos/apple-hero.webm" type="video/webm" />
         </video>
-        </div>
+      </div>
         
         
 
@@ -115,7 +107,7 @@ export default function HeroSection() {
               transition: 'opacity 0.9s ease 0.15s, transform 0.9s ease 0.15s',
             }}
           >
-            MacBook <span className="neo-smooth">Neo.</span>
+            Apple Event
           </h1>
 
           {/* Subheadline */}
@@ -128,7 +120,8 @@ export default function HeroSection() {
               transition: 'opacity 0.9s ease 0.28s, transform 0.9s ease 0.28s',
             }}
           >
-            The most powerful MacBook ever made.
+            Get ready for what’s next<br />
+            <span className="neo-smooth">Experience neo.</span>
           </p>
 
         </div>

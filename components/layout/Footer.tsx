@@ -41,13 +41,8 @@ export default function Footer() {
                 width={25}
                 height={25}
             />
-            <p className="text-white font-semibold text-sm tracking-wide mb-1">
-            MacBook Neo
-            </p>
             </Link>
-            <p className="text-white/40 py-3 text-xs">
-              The most powerful MacBook ever made.
-            </p>
+    
           </div>
 
           {/* Social links */}

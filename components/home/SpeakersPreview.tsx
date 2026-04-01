@@ -10,11 +10,6 @@ const speakers = [
     image: "/images/timcook.jpg",
   },
   {
-    name: "Steve Jobs",
-    role: "Founder, Apple",
-    image: "/images/stevejobs.jpg",
-  },
-  {
     name: "Craig Federighi",
     role: "SVP Software",
     image: "/images/craigfederighi.jpg",
@@ -30,9 +25,14 @@ const speakers = [
     image: "/images/john.jpg",
   },
   {
-    name: "Steve Wozniak",
-    role: "Co-founder, Apple",
-    image: "/images/steve.jpg",
+    name: "Greg Joswiak",
+    role: "SVP Worldwide Marketing",
+    image: "/images/greg.webp",  
+  },
+  {
+    name: "Eddy Cue",
+    role: "SVP Internet Software and Services",
+    image: "/images/eddyy.jpg",
   },
 ];
 
