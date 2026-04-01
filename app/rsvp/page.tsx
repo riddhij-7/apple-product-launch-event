@@ -1,4 +1,5 @@
 import RSVPForm from '@/components/rsvp/RsvpForms'
+import AttendeeMap from '@/components/rsvp/AttendeeMap'
 
 export const metadata = {
   title: 'RSVP',
@@ -21,6 +22,7 @@ export default function RSVPPage() {
 
         {/* Form */}
         <RSVPForm />
+        <AttendeeMap />
 
       </div>
     </main>
