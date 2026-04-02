@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
 
-const NEO_YELLOW = "#f5e642";
-const NEO_PINK   = "#f4a7b9";
-
 const labelStyle: React.CSSProperties = {
   fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase",
   color: "rgba(255,255,255,0.28)", marginBottom: 8,
