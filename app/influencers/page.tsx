@@ -1,4 +1,4 @@
-import InfluencersComponent from "@/components/influencers/Influencers"
+import Influencers from "@/components/influencers/Influencers"
 
 export const metadata = {
   title: "Influencers",
@@ -6,5 +6,5 @@ export const metadata = {
 }
 
 export default function InfluencersPage() {
-  return <InfluencersComponent />
+  return <Influencers />
 }
