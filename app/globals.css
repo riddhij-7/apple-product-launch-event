@@ -281,7 +281,7 @@ option { background: #1a1a1a; color: #fff; }
         }
 
         .card span {
-          font-family: 'Courier New', Courier, monospace;
+          font-family: 'Inter', sans-serif;
           font-size: clamp(44px, 6vw, 68px);
           font-weight: 700;
           color: #ffffff;

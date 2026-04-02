@@ -108,7 +108,7 @@ export default function ProductsPage() {
                 style={{ background: 'radial-gradient(ellipse at center, #7c3a00 0%, #0f0800 70%)' }}>
                 <div className="absolute inset-0 rounded-full scale-125"
                   style={{ background: 'radial-gradient(circle at 50% 50%, rgba(249,115,22,0.3), transparent 65%)' }} />
-                <Image src="/images/iphone-17-pro.jpg" alt="iPhone 17 Pro" fill className="object-cover object-center opacity-90" />
+                <Image src="/images/Iphone-17-pro.jpg" alt="iPhone 17 Pro" fill className="object-cover object-center opacity-90" />
               </div>
               <div className="w-[58%] flex flex-col justify-center px-8 py-10">
                 <h3 className="text-[26px] font-medium text-white mb-3">iPhone 17 Pro</h3>
@@ -131,14 +131,14 @@ export default function ProductsPage() {
 
 
           <AnimatedCard delay={100}>
-            {/* iPhone 16 Purple Card */}
+            {/* iPhone 17 Purple Card */}
             <div className="relative rounded-3xl overflow-hidden min-h-[320px] flex flex-row"
               style={{ background: 'linear-gradient(135deg, #0d0618, #1a0a2e, #0d0618)' }}>
               <div className="w-[42%] relative flex items-center justify-center overflow-hidden"
                 style={{ background: 'radial-gradient(ellipse at center, #4a1d7a 0%, #0a0412 70%)' }}>
                 <div className="absolute inset-0 rounded-full scale-125"
                   style={{ background: 'radial-gradient(circle at 50% 50%, rgba(167,139,250,0.3), transparent 65%)' }} />
-                <Image src="/images/iphone-17.webp" alt="iPhone 16 Purple" fill className="object-cover object-top opacity-90" />
+                <Image src="/images/iPhone-17.webp" alt="iPhone 17 Purple" fill className="object-cover object-top opacity-90" />
               </div>
               <div className="w-[58%] flex flex-col justify-center px-8 py-10">
                 <h3 className="text-[26px] font-medium text-white mb-3">iPhone 17</h3>
@@ -283,7 +283,7 @@ export default function ProductsPage() {
                 style={{ background: 'radial-gradient(ellipse at center, #0a2a0a 0%, #010401 70%)' }}>
                 <div className="absolute inset-0 rounded-full scale-125"
                   style={{ background: 'radial-gradient(circle at 50% 80%, rgba(100,220,100,0.35), transparent 60%)' }} />
-                <Image src="/images/apple-watch-ultra.jpg" alt="Apple Watch Ultra 3" fill className="object-cover object-center opacity-95" />
+                <Image src="/images/apple_watch_ultra.jpg" alt="Apple Watch Ultra 3" fill className="object-cover object-center opacity-95" />
               </div>
               <div className="w-[58%] flex flex-col justify-center px-8 py-10">
                 <h3 className="text-[26px] font-medium text-white mb-3">Apple Watch Ultra 3</h3>

@@ -239,7 +239,7 @@ export default function HeroSection() {
             Reserve your seat
           </Link>
           <Link
-            href="/macbook-neo"
+            href="/agenda"
             className="px-8 py-3.5 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
           >
             Learn more

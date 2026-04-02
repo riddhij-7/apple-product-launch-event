@@ -82,7 +82,7 @@ export default function Anniversary() {
       <p className="mb-6 font-xs max-w-2xl text-white/100 text-2xl md:text-sm leading-relaxed">
         Join us as we celebrate 50 years of groundbreaking technology and design with a new product launch that pays homage to our legacy while looking boldly into the future.
       </p>
-      <p className="mb-6 font-xs max-w-2xl text-white/100 text-2xl md:text-sm leading-relaxed">Photos. 1 April 2026.</p>
+      <p className="mb-6 font-xs max-w-2xl text-white/100 text-2xl md:text-sm leading-relaxed">Photos 1 April 2026.</p>
       <p className="mb-6 font-xs max-w-2xl text-white/100 text-2xl md:text-lg leading-relaxed">
       </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">      
