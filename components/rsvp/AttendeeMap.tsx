@@ -69,7 +69,7 @@ export default function AttendeeMap() {
   const arcsRef    = useRef<Arc[]>([])
   const pulsesRef  = useRef<Pulse[]>([])
   const frameRef   = useRef(0)
-  const animRef    = useRef<number>()
+  const animRef = useRef<number | null>(null)
   const feedIdRef  = useRef(100)
   const wRef       = useRef(0)
   const hRef       = useRef(420)
