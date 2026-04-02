@@ -1,36 +1,12 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MacBook Neo Launch Event Website
 
-## Getting Started
+An immersive, feature-rich event platform designed for Apple's highly anticipated MacBook Neo product launch, celebrating 50 years of innovation. The website delivers a premium experience with multi-tier RSVP ticketing (General, Press, Influencer, VIP), a real-time interactive map visualizing global attendee registrations by country and city, and a groundbreaking Influencer Portal where content creators can apply for exclusive event invitations, early product access, and complimentary goods—complete with a gallery showcasing past Apple events and a curated list of previously invited influencers. Built with cutting-edge technology (Next.js 14, React, TypeScript, Tailwind CSS, MongoDB), the platform features comprehensive sections including a Products showcase of Apple's latest announcements, detailed Speaker profiles with testimonials and keynote highlights, past event video archives, a complete Event Agenda with venue information, and global Live Streaming capabilities. The stunning home page captivates visitors with an elegant hero section, live countdown, crisp event details, speaker previews, strategic CTAs, and an inspiring photo gallery commemorating Apple's 50th anniversary, all wrapped in Apple's signature dark aesthetic with smooth animations, intuitive navigation, and seamless footer design, optimized for flawless performance across all devices.
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+ 
+## Quick Links
+ 
+- **Live Demo**: [View Website](#)
+- **Deployment**: [Vercel](https://vercel.com)
+ 
+---

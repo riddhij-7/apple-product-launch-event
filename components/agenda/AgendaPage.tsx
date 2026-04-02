@@ -237,17 +237,6 @@ export default function AgendaPage() {
 
         {/* ── Hero ── */}
         <section className="text-center pb-10">
-          {/*<p
-            className="text-xs tracking-[0.25em] uppercase font-semibold mb-10"
-            style={{
-              color: "#6e6e73",
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(12px)",
-              transition: "all 0.6s ease 0.1s",
-            }}
-          >
-            April 7, 2026 · Apple Park · Cupertino, CA
-          </p> */}
           <h1
             className="font-bold tracking-tight leading-none mt-14"
             style={{

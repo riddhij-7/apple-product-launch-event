@@ -235,3 +235,144 @@ option { background: #1a1a1a; color: #fff; }
 .animate-scroll {
   animation: scroll 8s linear infinite;
 }
+
+.flip-unit {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .scene {
+          position: relative;
+          width: 110px;
+          height: 130px;
+          perspective: 600px;
+        }
+
+        @media (max-width: 640px) {
+          .scene { width: 76px; height: 92px; }
+        }
+
+        .card {
+          position: absolute;
+          inset: 0;
+          border-radius: 10px;
+          background: #1c1c1e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.07),
+            0 8px 32px rgba(0,0,0,0.8);
+          overflow: hidden;
+        }
+
+        .card::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            180deg,
+            rgba(255,255,255,0.05) 0%,
+            transparent 50%
+          );
+          pointer-events: none;
+        }
+
+        .card span {
+          font-family: 'Courier New', Courier, monospace;
+          font-size: clamp(44px, 6vw, 68px);
+          font-weight: 700;
+          color: #ffffff;
+          letter-spacing: -2px;
+          line-height: 1;
+          position: relative;
+          z-index: 1;
+        }
+
+        .card.front {
+          z-index: 2;
+          transform-origin: 50% 50%;
+        }
+
+        .card.front.flipping {
+          animation: appleFlip 0.45s cubic-bezier(0.45, 0.05, 0.55, 0.95) forwards;
+        }
+
+        @keyframes appleFlip {
+          0% {
+            transform: rotateX(0deg);
+            filter: brightness(1);
+          }
+          40% {
+            filter: brightness(0.4);
+          }
+          50% {
+            transform: rotateX(-90deg);
+            opacity: 1;
+          }
+          51% {
+            opacity: 0;
+          }
+          100% {
+            transform: rotateX(-180deg);
+            opacity: 0;
+          }
+        }
+
+        /* Back Card Animation (Incoming) */
+        .card.back {
+          z-index: 1;
+        }
+
+        .card.back.incoming {
+          animation: popIn 0.45s ease-out forwards;
+        }
+
+        @keyframes popIn {
+          0% {
+            transform: scale(0.92);
+            filter: brightness(0.3);
+          }
+          100% {
+            transform: scale(1);
+            filter: brightness(1);
+          }
+        }
+
+        /* Center hinge line */
+        .scene::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0; right: 0;
+          height: 1.5px;
+          background: rgba(0,0,0,0.6);
+          z-index: 10;
+          transform: translateY(-50%);
+        }
+
+
+        /* Center hinge line */
+        .scene::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: -5px; right: -5px;
+          height: 2px;
+          background: #000;
+          z-index: 10;
+          transform: translateY(-50%);
+          pointer-events: none;
+        }
+
+        .flip-label {
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 10px;
+          font-weight: 600;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.3);
+          margin: 0;
+        }

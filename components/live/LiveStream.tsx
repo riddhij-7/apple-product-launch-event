@@ -13,6 +13,9 @@ export default function LiveStream() {
       setMessages((prev) => [
         ...prev,
         `User${Math.floor(Math.random() * 100)}: Awesome!`,
+        `User${Math.floor(Math.random() * 100)}: Loving this!`,
+        `User${Math.floor(Math.random() * 100)}: Great!`,
+        `User${Math.floor(Math.random() * 100)}: So cool!`,
       ]);
     }, 2000);
 

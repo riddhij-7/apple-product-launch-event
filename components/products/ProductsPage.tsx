@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
-// ✅ Reusable hook for scroll animation
+// Reusable hook for scroll animation
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -12,7 +12,7 @@ function useScrollReveal() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect() // animate once only
+          observer.disconnect() 
         }
       },
       { threshold: 0.15 }
@@ -24,7 +24,7 @@ function useScrollReveal() {
   return { ref, visible }
 }
 
-// ✅ Wrapper component for each animated card
+// Wrapper component for each animated card
 function AnimatedCard({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
   const { ref, visible } = useScrollReveal()
 
@@ -89,7 +89,7 @@ export default function ProductsPage() {
       {/* Products Section */}
       <section className="bg-[#f5f5f7] py-20 px-6">
 
-        {/* ✅ Section title also animates in */}
+        {/* Section title also animates in */}
         <AnimatedCard delay={0}>
           <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-12">
             Here is what we announced

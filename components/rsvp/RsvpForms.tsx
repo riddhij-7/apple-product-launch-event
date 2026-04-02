@@ -12,8 +12,8 @@ const schema = z.object({
   email:   z.string().email('Please enter a valid email'),
   phone:   z.string().optional(),
   company: z.string().optional(),
-  city:    z.string().min(2, 'Please enter your city'),       // ← required for geocoding
-  country: z.string().min(2, 'Please enter your country'),   // ← required for geocoding
+  city:    z.string().min(2, 'Please enter your city'),       
+  country: z.string().min(2, 'Please enter your country'),   
 })
 
 type FormData = z.infer<typeof schema>
