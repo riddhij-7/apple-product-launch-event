@@ -143,7 +143,7 @@ export default function TicketTiers({ selected, onSelect }: Props) {
               <div style={{ flex: 1, padding: "14px 14px 12px", background: tier.bg, display: "flex", flexDirection: "column", gap: 12 }}>
                 {[
                   { label: "Event",  value: "Apple Launch Event 2026", color: "rgb(255, 255, 255)" },
-                  { label: "Date",   value: "Apr 7, 2026",     color: "rgb(255, 255, 255)" },
+                  { label: "Date",   value: "Apr 21, 2026",     color: "rgb(255, 255, 255)" },
                   { label: "Access", value: tier.desc,         color: tier.accent },
                 ].map((f) => (
                   <div key={f.label} style={{ display: "flex", flexDirection: "column", gap: 2 }}>

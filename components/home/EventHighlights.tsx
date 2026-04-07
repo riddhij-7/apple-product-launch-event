@@ -5,7 +5,7 @@ import Link from 'next/link'
 const highlights = [
   {
     label: 'Date',
-    value: 'April 7',
+    value: 'April 21',
     sub: '2026',
   },
   {
