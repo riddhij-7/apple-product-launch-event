@@ -6,7 +6,7 @@ An immersive, feature-rich event platform designed for Apple's highly anticipate
  
 ## Quick Links
  
-- **Live Demo**: [View Website](#)
+- **Live Demo**: [View Website](https://apple-product-launch-event.vercel.app/)
 - **Deployment**: [Vercel](https://vercel.com)
  
 ---
