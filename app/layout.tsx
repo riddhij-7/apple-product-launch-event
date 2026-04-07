@@ -24,6 +24,7 @@ export const metadata: Metadata = {
       'Join us for the launch of MacBook Neo. The most powerful MacBook ever made.',
     type: 'website',
   },
+  viewport: "width=device-width, initial-scale=1.0",
 }
 
 export default function RootLayout({

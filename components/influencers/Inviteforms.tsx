@@ -104,13 +104,17 @@ export default function InviteForm() {
 
       <div style={{ marginTop: 26 }}>
         <button
-          className="btn-w"
-          style={{ backgroundColor: "rgb(37,99,235)", opacity: loading ? 0.6 : 1 }}
-          disabled={!form.name || !form.email || !form.handle || loading}
-          onClick={handleSubmit}
-        >
-          {loading ? "Submitting…" : "Submit →"}
-        </button>
+  className="btn-w"
+  style={{ 
+    backgroundColor: "rgb(37,99,235)", 
+    opacity: loading ? 0.6 : 1,
+    cursor: (!form.name || !form.email || !form.handle || loading) ? 'not-allowed' : 'pointer'
+  }}
+  disabled={!form.name || !form.email || !form.handle || loading}
+  onClick={handleSubmit}
+>
+  {loading ? "Submitting…" : "Submit →"}
+</button>
       </div>
     </div>
   );
